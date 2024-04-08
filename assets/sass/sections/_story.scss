@@ -1,0 +1,72 @@
+.story {
+    height: calc(100dvh + 60px);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__step {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: $spacing-l;
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        background: $primary-100;
+        padding: 0 $spacing-l;
+        height: 44px;
+        border-radius: $radius-round;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-l;
+    }
+    
+    &__picture > img {
+        width: 92%;
+        max-width: 420px;
+        border-radius: $radius-l;
+        transform: rotate(-3deg);        
+    }
+
+    &__picture {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &:before {
+            content: "";
+            background: url("/assets/img/picture_pin.svg") no-repeat center / cover;
+            display: block;
+            position: absolute;
+            width: 76px;
+            height: 21px;
+            transform: rotate(-3deg);
+            z-index: 1;     
+            top: -13px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    }
+
+    &__candle {
+        display: none;
+    }
+
+    &__scrolldown {
+        position: absolute;
+        bottom: 54px;
+    }
+}
+

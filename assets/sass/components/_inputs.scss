@@ -1,0 +1,21 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-xs;
+    height: 44px;
+    padding: 0 $spacing-m 0 $spacing-l;
+    font-weight: 600;
+    border-radius: $radius-round;
+    text-decoration: none;
+
+    &.primary {
+        background: $primary-500;
+        color: $primary-800;
+    }
+
+    &.white {
+        background: $neutral-100;
+        color: $neutral-900; 
+    }
+}

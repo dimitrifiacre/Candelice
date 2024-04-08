@@ -1,0 +1,49 @@
+@font-face {
+    font-family: "Lexend";
+    src: url("../font/lexend.ttf") format("opentype");
+}
+
+// IMPORT QUINCY CF
+@import url("https://use.typekit.net/udc0dvr.css");
+
+body {
+    font-family: $font-body;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: $font-heading;
+    line-height: normal;
+}
+
+.h1 {
+    font-size: 2rem;
+}
+
+.h2 {
+    font-size: 1.625rem;
+}
+
+.h3 {
+    font-size: 1.375rem;
+}
+
+.h2 {
+    position: relative;
+
+    &:after {
+        content: "";
+        background: url("/assets/img/underline_heading.svg") no-repeat center / cover;
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 76px;
+        height: 5px;
+        bottom: -10px;
+    }
+}

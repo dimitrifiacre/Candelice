@@ -1,0 +1,22 @@
+@import "utils/variables";
+@import "base/reset", "base/typography", "base/icons";
+@import "components/inputs";
+@import "layout/header", "layout/footer";
+@import "sections/hero", "sections/story", "sections/products";
+
+body {
+    background: $neutral-100;
+    color: $neutral-900;
+}
+
+section {
+    padding: 0 $spacing-l;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $spacing-2xl 0;
+    gap: $spacing-2xl;
+}
