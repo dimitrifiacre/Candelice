@@ -1,5 +1,5 @@
 .story {
-    height: calc(100dvh + 60px);
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -20,19 +20,19 @@
         display: flex;
         align-items: center;
         background: $primary-100;
-        padding: 0 $spacing-l;
-        height: 44px;
+        padding: $spacing-xs $spacing-m;
         border-radius: $radius-round;
+        font-size: 1rem;
     }
 
     &__description {
         display: flex;
         flex-direction: column;
-        gap: $spacing-l;
+        gap: $spacing-xl;
     }
     
     &__picture > img {
-        width: 92%;
+        width: 84%;
         max-width: 420px;
         border-radius: $radius-l;
         transform: rotate(-3deg);        
@@ -46,7 +46,7 @@
 
         &:before {
             content: "";
-            background: url("assets/img/picture_pin.svg") no-repeat center / cover;
+            background: url("../img/picture_pin.svg") no-repeat center / cover;
             display: block;
             position: absolute;
             width: 76px;

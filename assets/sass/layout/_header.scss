@@ -25,14 +25,75 @@ header, .header {
         height: 44px;
 
         & svg path {
+            fill: #FCFCFC;
             transition: fill 0.15s ease;
         }
     }
 
-    &.scrolled {
+    &.scrolled, &.active {
         background: $neutral-100;
         color: $neutral-900;
         border-bottom: 1px solid $neutral-200;
         transition: 0.15s ease;
+    }
+
+    &.scrolled .header__logo svg path, &.active .header__logo svg path {
+        fill: #F0725C;
+    }
+
+    &__navigation {
+        display: flex;
+        opacity: 0;
+        background: rgba(0, 0, 0, .50);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100vh;
+        overflow: hidden;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+
+        &.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+
+    & nav {
+        position: absolute;
+        z-index: 0;
+        background: #fcfcfc;
+        top: -252px;
+        left: 0;
+        width: 100%;
+        transition: top .3s ease;
+    }
+
+    & nav ul {
+        padding: $spacing-xs 0;
+    }
+
+    & nav ul li a {
+        display: flex;
+        height: 44px;
+        padding: $spacing-s $spacing-l;
+        text-decoration: none;
+        color: $neutral-900;
+        font-weight: 600;
+    }
+
+    &__background {
+        display: none;
+        position: fixed;
+        background: rgba(0, 0, 0, .5);
+        z-index: 4;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        transition: .3s ease;
     }
 }
