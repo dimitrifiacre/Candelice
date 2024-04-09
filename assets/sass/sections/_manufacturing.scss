@@ -1,3 +1,7 @@
 .manufacturing {
     padding-top: $spacing-4xl;
+
+    @media (min-width: 900px) {
+        padding-top: 14rem;
+    }
 }

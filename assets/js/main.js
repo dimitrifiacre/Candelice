@@ -18,9 +18,18 @@ window.addEventListener("scroll", onScroll);
 // MENU ON CLICK
 const navbarToggle = document.getElementById("navbar-toggle");
 const headerNavigation = document.querySelector(".header__navigation");
-const nav = document.querySelector(".header__navigation nav");
+const nav = document.querySelector(".header__navigation ul");
 const header = document.querySelector("header");
+const navLinks = document.querySelectorAll(".header__navigation ul li a");
 
+// Fermer le menu
+function closeMenu() {
+    headerNavigation.classList.remove("active");
+    header.classList.remove("active");
+    nav.style.top = "-252px";
+}
+
+// Toggle le menu
 navbarToggle.addEventListener("click", () => {
     headerNavigation.classList.toggle("active"); 
     header.classList.toggle("active");
@@ -32,10 +41,14 @@ navbarToggle.addEventListener("click", () => {
     }
 });
 
+navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        closeMenu();
+    });
+});
+
 headerNavigation.addEventListener("click", (e) => {
-    if (!e.target.closest("nav")) {
-        headerNavigation.classList.remove("active");
-        header.classList.remove("active");
-        nav.style.top = "-252px";
+    if (!e.target.closest("ul")) {
+        closeMenu();
     }
 });

@@ -7,6 +7,14 @@
     &__content {
         display: flex;
         flex-direction: column;
+
+        @media (min-width: 900px) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            gap: $spacing-2xl;
+        }
     }
 
     &__step {
@@ -23,19 +31,43 @@
         padding: $spacing-xs $spacing-m;
         border-radius: $radius-round;
         font-size: 1rem;
+
+        @media (min-width: 900px) {
+            font-size: 1.625rem;
+            padding: $spacing-xs $spacing-l;
+        }
     }
 
     &__description {
         display: flex;
         flex-direction: column;
         gap: $spacing-xl;
+
+        @media (min-width: 900px) {
+            flex-direction: row;
+            align-items: center;
+
+            p {
+                max-width: 380px;
+            }
+        }
     }
     
     &__picture > img {
         width: 84%;
         max-width: 420px;
         border-radius: $radius-l;
-        transform: rotate(-3deg);        
+        transform: rotate(-3deg);  
+        
+        @media (min-width: 900px) {
+            width: max-content;
+            max-width: 280px;
+        }
+
+        @media (min-width: 1200px) {
+            width: max-content;
+            max-width: 380px;
+        }
     }
 
     &__picture {
@@ -62,11 +94,28 @@
 
     &__candle {
         display: none;
+
+        @media (min-width: 900px) {
+            display: flex;
+        }
     }
 
     &__scrolldown {
         position: absolute;
         bottom: 54px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 64px;
+        height: 64px;
+        background: transparent;
+        cursor: pointer;
+        border: 3.5px solid $neutral-200;
+        border-radius: $radius-round;
+
+        @media (min-width: 900px) {
+            border: none;
+            bottom: 96px;
+        }
     }
 }
-

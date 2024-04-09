@@ -4,6 +4,10 @@
 @import "layout/header", "layout/footer";
 @import "sections/hero", "sections/story", "sections/products", "sections/manufacturing";
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: $neutral-100;
     color: $neutral-900;
@@ -11,6 +15,9 @@ body {
 
 section {
     padding: 0 $spacing-l;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .container {
@@ -19,4 +26,9 @@ section {
     align-items: center;
     padding: $spacing-2xl 0;
     gap: $spacing-2xl;
+
+    @media (min-width: 900px) {
+        width: 100%;
+        max-width: 1280px;
+    }
 }

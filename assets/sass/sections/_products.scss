@@ -5,6 +5,10 @@
     background-color: $primary-100;
     padding-bottom: $spacing-4xl;
 
+    @media (min-width: 900px) {
+        padding-bottom: 14rem;
+    }
+
     &:after {
         content: "";
         position: absolute;
@@ -22,6 +26,10 @@
         display: flex;
         flex-direction: column;
         gap: $spacing-m;
+
+        @media (min-width: 900px) {
+            flex-direction: row;
+      }
     }
 
     &__items {
@@ -35,6 +43,7 @@
         background: $neutral-100;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         gap: $spacing-s;
         padding: $spacing-l;
         border-radius: $radius-l;
@@ -45,7 +54,9 @@
         }
 
         &.active {
+            justify-content: flex-start;
             padding: $spacing-l $spacing-l $spacing-2xl $spacing-l;
+            height: 100%;
 
             #progression-toggle, .progressbar, p.small {
               display: block;
@@ -56,6 +67,12 @@
     &__picture {
         width: 100%;
         border-radius: $radius-l;
+
+        @media (min-width: 900px) {
+            max-width: 480px;
+            height: 420px;
+            object-fit: cover;
+        }
     }
 
     &__slide {
@@ -70,6 +87,20 @@
 
         & img {
           border-radius: $radius-m;
+        }
+
+        @media (min-width: 600px) {
+            height: 320px;
+            align-items: center;
+        }
+
+        @media (min-width: 900px) {
+            height: 420px;
+            bottom: -200px;
+
+            & img {
+              height: 320px;
+            }
         }
     }
 

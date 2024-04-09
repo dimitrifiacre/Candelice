@@ -1,23 +1,37 @@
 header, .header {
     position: fixed;
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
     padding: 0 $spacing-m;
     width: 100%;
     height: 60px;
     z-index: 5;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.00) 100%);
     color: $neutral-100;
+    transition: 0.15s ease;
 
     & button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 44px;
         height: 44px;
         background: transparent;
         color: inherit;
         border: none;
         cursor: pointer;
+
+        @media (min-width: 900px) {
+            display: none;
+        }
+    }
+
+    &__button--desktop {
+        display: none!important;
+
+        @media (min-width: 900px) {
+            display: flex!important;
+        }
     }
 
     &__logo {
@@ -27,6 +41,20 @@ header, .header {
         & svg path {
             fill: #FCFCFC;
             transition: fill 0.15s ease;
+        }
+
+        & svg g {
+            display: none;
+
+            @media (min-width: 900px) {
+                display: block;
+            }
+        }
+        
+        @media (min-width: 900px) {
+            & svg {
+                width: 191px;
+            }
         }
     }
 
@@ -52,35 +80,68 @@ header, .header {
         bottom: 0;
         height: 100vh;
         overflow: hidden;
-        transition: opacity 0.3s ease;
+        transition: opacity .15s ease;
         pointer-events: none;
 
+        & button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         &.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        @media (min-width: 900px) {
+            position: initial;
+            background: transparent;
+            height: initial;
             opacity: 1;
             pointer-events: auto;
         }
     }
 
     & nav {
-        position: absolute;
-        z-index: 0;
-        background: #fcfcfc;
-        top: -252px;
-        left: 0;
+        display: flex;
         width: 100%;
-        transition: top .3s ease;
+        max-width: 1280px;
+        height: 100%;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row-reverse;
+
+        @media (min-width: 900px) {
+            flex-direction: row;
+        }
     }
 
     & nav ul {
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        width: 100%;
+        height: fit-content;
+        position: absolute;
+        top: -252px;
         padding: $spacing-xs 0;
+        transition: top 1s ease;
+
+        @media (min-width: 900px) {
+            flex-direction: row;
+            background: transparent;
+            position: initial;
+        }
     }
 
     & nav ul li a {
         display: flex;
+        align-items: center;
         height: 44px;
         padding: $spacing-s $spacing-l;
         text-decoration: none;
-        color: $neutral-900;
+        color: inherit;
         font-weight: 600;
     }
 
