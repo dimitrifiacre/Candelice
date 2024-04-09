@@ -63,7 +63,10 @@
         bottom: -120px;
         left: 0;
         height: 260px;
-        overflow-x: hidden;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-start;
 
         & img {
           border-radius: $radius-m;
@@ -74,6 +77,7 @@
         transform: rotate(-3deg) translateX(-20px);
         display: flex;
         gap: $spacing-s;
+        transition: transform 0.1s ease;
     }
 }
 

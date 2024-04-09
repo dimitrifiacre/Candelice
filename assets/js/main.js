@@ -1,13 +1,19 @@
-// CHANGE STYLE MENU ON FIRST SCROLL
-function menuOnScroll() {
+// SCROLL DETECTION
+function onScroll() {
     const header = document.querySelector("header");
     const scrollPosition = window.scrollY;
-    const isScrolled = scrollPosition > 0;
 
+    // Change style menu on first scroll
+    const isScrolled = scrollPosition > 0;
     header.classList.toggle("scrolled", isScrolled);
+
+    // Slide scroll animation
+    const productsSlides = document.querySelector(".products__slides");
+    const translateValue = scrollPosition * 0.1;
+    productsSlides.style.transform = `rotate(-3deg) translateX(${-translateValue}px)`;
 }
 
-window.addEventListener("scroll", menuOnScroll);
+window.addEventListener("scroll", onScroll);
 
 // MENU ON CLICK
 const navbarToggle = document.getElementById("navbar-toggle");
