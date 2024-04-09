@@ -35,10 +35,10 @@ header, .header {
         color: $neutral-900;
         border-bottom: 1px solid $neutral-200;
         transition: 0.15s ease;
-    }
 
-    &.scrolled .header__logo svg path, &.active .header__logo svg path {
-        fill: #F0725C;
+        .header__logo svg path {
+            fill: #F0725C;
+        }
     }
 
     &__navigation {
