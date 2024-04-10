@@ -1,6 +1,7 @@
 @font-face {
     font-family: "Lexend";
     src: url("../font/lexend.ttf") format("opentype");
+    font-display: swap;
 }
 
 // IMPORT QUINCY CF
@@ -22,7 +23,7 @@ h1,h2,h3,h4,h5,h6 {
 .h1 {
     font-size: 2rem;
 
-    @media (min-width: 900px) {
+    @media (min-width: $breakpoint-l) {
         font-size: 2.75rem;
     }
 }
@@ -31,7 +32,7 @@ h1,h2,h3,h4,h5,h6 {
     font-size: 1.625rem;
     position: relative;
 
-    @media (min-width: 900px) {
+    @media (min-width: $breakpoint-l) {
         font-size: 2.25rem;
     }
 
@@ -47,7 +48,7 @@ h1,h2,h3,h4,h5,h6 {
         height: 5px;
         bottom: -10px;
 
-        @media (min-width: 900px) {
+        @media (min-width: $breakpoint-l) {
             width: 131px;
             height: 7px;
             bottom: -14px;
@@ -58,12 +59,17 @@ h1,h2,h3,h4,h5,h6 {
 .h3 {
     font-size: 1.375rem;
 
-    @media (min-width: 900px) {
+    @media (min-width: $breakpoint-l) {
         font-size: 1.625rem;
     }
 }
 
-p.small {
-    font-size: 14px;
-    line-height: 20px;
+p {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+
+    @media (min-width: $breakpoint-l) {
+        font-size: 1rem;
+        line-height: 1.375rem;
+    }
 }

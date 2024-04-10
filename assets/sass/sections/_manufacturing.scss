@@ -1,7 +1,68 @@
 .manufacturing {
-    padding-top: $spacing-4xl;
+    margin-top: $spacing-4xl;
 
-    @media (min-width: 900px) {
-        padding-top: 14rem;
+    @media (min-width: $breakpoint-l) {
+        margin-top: 14rem;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-2xl;
+    }
+
+    &__step {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-l;
+
+        @media (min-width: $breakpoint-l) {
+            flex-direction: row;
+            align-items: center;
+            gap: $spacing-xl;
+            max-width: 920px;
+
+            &:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+        }
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-s;
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        gap: $spacing-s;
+
+        & span {
+            height: 32px;
+            width: 100%;
+            max-width: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: $neutral-900;
+            color: $neutral-100;
+            border-radius: $radius-round;
+            font-family: $font-heading;
+            font-size: 24px;
+        }
+    }
+
+
+    &__picture {
+        width: 100%;
+        border-radius: $radius-l;
+        object-fit: cover;
+
+        @media (min-width: $breakpoint-l) {
+            width: 260px;
+            height: 260px;
+        }
     }
 }

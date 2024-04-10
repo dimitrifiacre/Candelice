@@ -1,5 +1,5 @@
 .story {
-    height: 100dvh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -8,7 +8,7 @@
         display: flex;
         flex-direction: column;
 
-        @media (min-width: 900px) {
+        @media (min-width: $breakpoint-l) {
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
@@ -30,9 +30,9 @@
         background: $primary-100;
         padding: $spacing-xs $spacing-m;
         border-radius: $radius-round;
-        font-size: 1rem;
+        font-size: 1.125rem;
 
-        @media (min-width: 900px) {
+        @media (min-width: $breakpoint-l) {
             font-size: 1.625rem;
             padding: $spacing-xs $spacing-l;
         }
@@ -43,7 +43,7 @@
         flex-direction: column;
         gap: $spacing-xl;
 
-        @media (min-width: 900px) {
+        @media (min-width: $breakpoint-l) {
             flex-direction: row;
             align-items: center;
 
@@ -59,12 +59,12 @@
         border-radius: $radius-l;
         transform: rotate(-3deg);  
         
-        @media (min-width: 900px) {
+        @media (min-width: $breakpoint-l) {
             width: max-content;
             max-width: 280px;
         }
 
-        @media (min-width: 1200px) {
+        @media (min-width: $breakpoint-xl) {
             width: max-content;
             max-width: 380px;
         }
@@ -95,7 +95,7 @@
     &__candle {
         display: none;
 
-        @media (min-width: 900px) {
+        @media (min-width: $breakpoint-l) {
             display: flex;
         }
     }
@@ -113,7 +113,7 @@
         border: 3.5px solid $neutral-200;
         border-radius: $radius-round;
 
-        @media (min-width: 900px) {
+        @media (min-width: $breakpoint-l) {
             border: none;
             bottom: 96px;
         }

@@ -5,7 +5,7 @@
     background-color: $primary-100;
     padding-bottom: $spacing-4xl;
 
-    @media (min-width: 900px) {
+    @media (min-width: $breakpoint-l) {
         padding-bottom: 14rem;
     }
 
@@ -27,7 +27,7 @@
         flex-direction: column;
         gap: $spacing-m;
 
-        @media (min-width: 900px) {
+        @media (min-width: $breakpoint-l) {
             flex-direction: row;
       }
     }
@@ -49,7 +49,7 @@
         border-radius: $radius-l;
         overflow: hidden;
 
-        .small {
+        p {
           display: none;
         }
 
@@ -61,6 +61,10 @@
             #progression-toggle, .progressbar, p.small {
               display: block;
             }
+
+            p {
+                display: block;
+            }
         }
     }
 
@@ -68,7 +72,7 @@
         width: 100%;
         border-radius: $radius-l;
 
-        @media (min-width: 900px) {
+        @media (min-width: $breakpoint-l) {
             max-width: 480px;
             height: 420px;
             object-fit: cover;
@@ -89,13 +93,13 @@
           border-radius: $radius-m;
         }
 
-        @media (min-width: 600px) {
+        @media (min-width: $breakpoint-m) {
             height: 320px;
             align-items: center;
         }
 
-        @media (min-width: 900px) {
-            height: 420px;
+        @media (min-width: $breakpoint-l) {
+            height: 470px;
             bottom: -200px;
 
             & img {

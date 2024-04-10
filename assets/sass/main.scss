@@ -2,7 +2,7 @@
 @import "base/reset", "base/typography", "base/icons";
 @import "components/inputs";
 @import "layout/header", "layout/footer";
-@import "sections/hero", "sections/story", "sections/products", "sections/manufacturing";
+@import "sections/hero", "sections/story", "sections/products", "sections/manufacturing", "sections/contact";
 
 html {
     scroll-behavior: smooth;
@@ -27,7 +27,7 @@ section {
     padding: $spacing-2xl 0;
     gap: $spacing-2xl;
 
-    @media (min-width: 900px) {
+    @media (min-width: $breakpoint-l) {
         width: 100%;
         max-width: 1280px;
     }

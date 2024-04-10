@@ -1,0 +1,9 @@
+.contact {
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-l;
+        width: 100%;
+        max-width: 620px;
+    }
+}

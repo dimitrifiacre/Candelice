@@ -18,6 +18,8 @@ $neutral-700: #424242;
 $neutral-800: #212121;
 $neutral-900: #151515;
 
+$other-error: #F05C5C;
+
 // SPACING
 $spacing-3xs: 0.25rem;
 $spacing-2xs: 0.375rem;
@@ -42,3 +44,8 @@ $radius-round: 9999px;
 // FONTS
 $font-heading: "quincy-cf", sans-serif;
 $font-body: "Lexend", sans-serif;
+
+// BREAKPOINTS
+$breakpoint-m: 600px;
+$breakpoint-l: 900px;
+$breakpoint-xl: 1200px;
