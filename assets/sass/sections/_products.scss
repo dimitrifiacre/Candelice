@@ -18,7 +18,7 @@
         height: 100%;
         background: $primary-100;
         z-index: -1;
-        transform: skewY(-3deg);
+        transform: skewY(-1.5deg);
         transform-origin: top left;
     }
 
@@ -39,15 +39,19 @@
     }
 
     &__item {
-        position: relative;
         background: $neutral-100;
         display: flex;
         flex-direction: column;
         justify-content: center;
         gap: $spacing-s;
-        padding: $spacing-l;
         border-radius: $radius-l;
         overflow: hidden;
+        cursor: pointer;
+
+        h2 {
+            padding: $spacing-l;
+            padding-bottom: 10px;
+        }
 
         p {
           display: none;
@@ -55,15 +59,24 @@
 
         &.active {
             justify-content: flex-start;
-            padding: $spacing-l $spacing-l $spacing-2xl $spacing-l;
-            height: 100%;
+            gap: $spacing-s;
+            pointer-events: none;
 
-            #progression-toggle, .progressbar, p.small {
+            .progression__toggle, .progressbar, p.small {
               display: block;
             }
 
             p {
                 display: block;
+                padding: 0rem 1.5rem 4rem 1.5rem;
+            }
+
+            h2 {
+                padding-bottom: 0;
+            }
+
+            > .products__description {
+                max-height: 100%;
             }
         }
     }
@@ -79,11 +92,18 @@
         }
     }
 
+    &__description {
+        max-height: 0;
+        overflow: hidden;
+        position: relative;
+        transition: max-height .3s ease;
+    }
+
     &__slide {
         position: absolute;
         bottom: -120px;
         left: 0;
-        height: 260px;
+        height: 280px;
         width: 100%;
         overflow: hidden;
         display: flex;
@@ -132,7 +152,7 @@
     }
 }
 
-#progression-toggle {
+.progression__toggle {
     position: absolute;
     display: none;
     bottom: 16px;
@@ -143,4 +163,5 @@
     color: inherit;
     border: none;
     cursor: pointer;
+    pointer-events: auto;
 }

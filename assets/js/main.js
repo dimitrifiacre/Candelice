@@ -52,3 +52,41 @@ headerNavigation.addEventListener("click", (e) => {
         closeMenu();
     }
 });
+
+// COLLAPSE
+const productsItems = document.querySelectorAll(".products__item");
+
+function activeCollapse(index) {
+    productsItems.forEach(item => {
+        item.classList.remove("active");
+    });
+
+    productsItems[index].classList.add("active");
+    const progressBar = productsItems[index].querySelector(".progressbar__progression");
+    progressBar.style.width = "0%";
+
+    const progressTime = 10000;
+
+    let startTime = Date.now();
+    let endTime = startTime + progressTime;
+
+    function updateProgressBar() {
+        const now = Date.now();
+        const elapsedTime = now - startTime;
+        const progress = Math.min(100, (elapsedTime / progressTime) * 100);
+
+        progressBar.style.width = progress + "%";
+
+        if (now < endTime) {
+            requestAnimationFrame(updateProgressBar);
+        }
+    }
+
+    updateProgressBar();
+
+    setTimeout(() => {
+        activeCollapse((index + 1) % productsItems.length);
+    }, progressTime);
+}
+
+activeCollapse(0);

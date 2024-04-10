@@ -70,8 +70,6 @@
     display: flex;
     align-items: center;
     gap: $spacing-s;
-    cursor: pointer;
-    width: fit-content;
 
     label {
         cursor: pointer;
@@ -101,6 +99,7 @@
         font-family: "icomoon";
         content: "\e908";
         font-size: 20px;
+        margin-left: 2px;
         color: $neutral-100;
         display: none;
     }
