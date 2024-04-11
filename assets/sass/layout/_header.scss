@@ -60,6 +60,7 @@ header, .header {
 
     &.scrolled, &.active {
         background: $neutral-100;
+        // background: map-get(map-get(map-get($themes, $theme), neutral), 100);
         color: $neutral-900;
         border-bottom: 1px solid $neutral-200;
         transition: 0.15s ease;

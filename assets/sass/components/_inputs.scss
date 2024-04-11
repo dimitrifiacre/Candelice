@@ -28,7 +28,16 @@
 
     &.white {
         background: $neutral-100;
-        color: $neutral-900; 
+        color: $neutral-900;
+        
+        &:hover {
+            background: $neutral-200;
+        }
+
+        &:active, &:focus-visible {
+            box-shadow: inset 0 0 0 1.5px $neutral-400;
+            outline: none;
+        }
     }
 }
 
