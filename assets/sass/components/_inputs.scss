@@ -62,7 +62,7 @@
         height: auto;
         min-height: 160px;
         padding: $spacing-s 18px;
-
+        resize: none;
     }
 }
 
@@ -116,4 +116,4 @@
             outline: none;
         }
     }
- }
+}
