@@ -59,6 +59,7 @@
     
     &__picture > img {
         width: 84%;
+        height: auto;
         max-width: 420px;
         border-radius: $radius-l;
         transform: rotate(-3deg);
