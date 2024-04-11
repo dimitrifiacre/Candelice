@@ -63,6 +63,10 @@
         min-height: 160px;
         padding: $spacing-s 18px;
         resize: none;
+
+        @include breakpoint-l {
+            min-height: 200px;
+        }
     }
 }
 
