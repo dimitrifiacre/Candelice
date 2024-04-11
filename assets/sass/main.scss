@@ -1,4 +1,4 @@
-@import "utils/variables";
+@import "utils/variables", "utils/mixins";
 @import "base/reset", "base/typography", "base/icons";
 @import "components/inputs";
 @import "layout/header", "layout/footer";
@@ -27,7 +27,7 @@ section {
     padding: $spacing-2xl 0;
     gap: $spacing-2xl;
 
-    @media (min-width: $breakpoint-l) {
+    @include breakpoint-l {
         width: 100%;
         max-width: 1280px;
     }

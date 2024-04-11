@@ -1,7 +1,7 @@
 .manufacturing {
     margin-top: $spacing-4xl;
 
-    @media (min-width: $breakpoint-l) {
+    @include breakpoint-l {
         margin-top: 14rem;
     }
 
@@ -16,7 +16,7 @@
         flex-direction: column;
         gap: $spacing-l;
 
-        @media (min-width: $breakpoint-l) {
+        @include breakpoint-l {
             flex-direction: row;
             align-items: center;
             gap: $spacing-xl;
@@ -60,7 +60,7 @@
         border-radius: $radius-l;
         object-fit: cover;
 
-        @media (min-width: $breakpoint-l) {
+        @include breakpoint-l {
             width: 260px;
             height: 260px;
         }

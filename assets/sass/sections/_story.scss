@@ -8,7 +8,7 @@
         display: flex;
         flex-direction: column;
 
-        @media (min-width: $breakpoint-l) {
+        @include breakpoint-l {
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
@@ -41,9 +41,13 @@
     &__description {
         display: flex;
         flex-direction: column;
-        gap: $spacing-xl;
+        gap: $spacing-l;
 
-        @media (min-width: $breakpoint-l) {
+        @include breakpoint-s {
+            gap: $spacing-xl;
+        }
+
+        @include breakpoint-l {
             flex-direction: row;
             align-items: center;
 
@@ -57,15 +61,14 @@
         width: 84%;
         max-width: 420px;
         border-radius: $radius-l;
-        transform: rotate(-3deg);  
-        
-        @media (min-width: $breakpoint-l) {
+        transform: rotate(-3deg);
+
+        @include breakpoint-l {
             width: max-content;
             max-width: 280px;
         }
 
-        @media (min-width: $breakpoint-xl) {
-            width: max-content;
+        @include breakpoint-xl {
             max-width: 380px;
         }
     }
@@ -95,27 +98,38 @@
     &__candle {
         display: none;
 
-        @media (min-width: $breakpoint-l) {
+        @include breakpoint-l {
             display: flex;
         }
     }
 
     &__scrolldown {
         position: absolute;
-        bottom: 54px;
+        bottom: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 64px;
-        height: 64px;
+        width: 44px;
+        height: 44px;
         background: transparent;
         cursor: pointer;
-        border: 3.5px solid $neutral-200;
+        border: 3px solid $neutral-200;
         border-radius: $radius-round;
 
-        @media (min-width: $breakpoint-l) {
+        @include breakpoint-s {
+            bottom: 54px;
+            width: 56px;
+            height: 56px;
+        }
+
+        @include breakpoint-l {
             border: none;
             bottom: 96px;
+
+            svg {
+                width: 22px;
+                height: 22px;
+            }
         }
     }
 }

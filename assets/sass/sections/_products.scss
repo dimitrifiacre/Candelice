@@ -5,7 +5,7 @@
     background-color: $primary-100;
     padding-bottom: $spacing-4xl;
 
-    @media (min-width: $breakpoint-l) {
+    @include breakpoint-l {
         padding-bottom: 14rem;
     }
 
@@ -27,9 +27,9 @@
         flex-direction: column;
         gap: $spacing-m;
 
-        @media (min-width: $breakpoint-l) {
+        @include breakpoint-l {
             flex-direction: row;
-      }
+        }
     }
 
     &__items {
@@ -87,7 +87,7 @@
         width: 100%;
         border-radius: $radius-l;
 
-        @media (min-width: $breakpoint-l) {
+        @include breakpoint-l {
             max-width: 480px;
             object-fit: cover;
         }
@@ -97,7 +97,7 @@
         max-height: 0;
         overflow: hidden;
         position: relative;
-        transition: .3s ease-in-out;
+        // transition: .3s ease-in-out;
     }
 
     &__slide {
@@ -114,12 +114,12 @@
           border-radius: $radius-m;
         }
 
-        @media (min-width: $breakpoint-m) {
+        @include breakpoint-m {
             height: 320px;
             align-items: center;
         }
 
-        @media (min-width: $breakpoint-l) {
+        @include breakpoint-l {
             height: 470px;
             bottom: -200px;
 
@@ -134,7 +134,7 @@
         transform: rotate(-3deg) translateX(-20px);
         display: flex;
         gap: $spacing-s;
-        transition: transform 0.1s ease;
+        transition: transform 0.15s ease;
     }
 }
 

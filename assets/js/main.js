@@ -58,12 +58,16 @@ headerNavigation.addEventListener("click", (e) => {
 // COLLAPSE
 const productsItems = document.querySelectorAll(".products__item");
 const progressTime = 10000;
+const productImage = document.querySelector(".products__picture");
+
 
 // Update ative collapse
 function activeCollapse(index) {
     productsItems.forEach(item => item.classList.remove("active"));
     const currentItem = productsItems[index];
     currentItem.classList.add("active");
+    const imgPath = currentItem.getAttribute("data-img");
+    productImage.setAttribute("src", imgPath);
     const progressBar = currentItem.querySelector(".progressbar__progression");
     progressBar.style.width = "0%";
     updateProgressBar(progressBar, Date.now());
@@ -83,3 +87,9 @@ function updateProgressBar(progressBar, startTime) {
 
 // Start collapse system with first item
 activeCollapse(0);
+
+// CHANGE FAVICON
+document.addEventListener("visibilitychange", () => {
+    const favicon = document.querySelector("link[rel~='icon']");
+    favicon.href = document.hidden ? "assets/img/favicon-inactive.png" : "assets/img/favicon.png";
+});

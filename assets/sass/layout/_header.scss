@@ -21,7 +21,7 @@ header, .header {
         border: none;
         cursor: pointer;
 
-        @media (min-width: $breakpoint-l) {
+        @include breakpoint-l {
             display: none;
         }
     }
@@ -29,7 +29,7 @@ header, .header {
     &__button--desktop {
         display: none!important;
 
-        @media (min-width: $breakpoint-l) {
+        @include breakpoint-l {
             display: flex!important;
         }
     }
@@ -46,12 +46,12 @@ header, .header {
         & svg g {
             display: none;
 
-            @media (min-width: $breakpoint-l) {
+            @include breakpoint-l {
                 display: block;
             }
         }
         
-        @media (min-width: $breakpoint-l) {
+        @include breakpoint-l {
             & svg {
                 width: 191px;
             }
@@ -94,7 +94,7 @@ header, .header {
             pointer-events: auto;
         }
 
-        @media (min-width: $breakpoint-l) {
+        @include breakpoint-l {
             position: initial;
             background: transparent;
             height: initial;
@@ -112,7 +112,7 @@ header, .header {
         align-items: center;
         flex-direction: row-reverse;
 
-        @media (min-width: $breakpoint-l) {
+        @include breakpoint-l {
             flex-direction: row;
         }
     }
@@ -128,7 +128,7 @@ header, .header {
         padding: $spacing-xs 0;
         transition: top 1s ease;
 
-        @media (min-width: $breakpoint-l) {
+        @include breakpoint-l {
             flex-direction: row;
             background: transparent;
             position: initial;
