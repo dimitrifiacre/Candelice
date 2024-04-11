@@ -22,31 +22,33 @@ const nav = document.querySelector(".header__navigation ul");
 const header = document.querySelector("header");
 const navLinks = document.querySelectorAll(".header__navigation ul li a");
 
-// Fermer le menu
+// Close menu
 function closeMenu() {
     headerNavigation.classList.remove("active");
     header.classList.remove("active");
-    nav.style.top = "-252px";
+    nav.style.top = "-290px";
 }
 
-// Toggle le menu
+// Toggle menu
 navbarToggle.addEventListener("click", () => {
-    headerNavigation.classList.toggle("active"); 
+    headerNavigation.classList.toggle("active");
     header.classList.toggle("active");
 
     if (headerNavigation.classList.contains("active")) {
         nav.style.top = "0px";
     } else {
-        nav.style.top = "-252px";
+        nav.style.top = "-290px";
     }
 });
 
+// Close menu after clicking on link
 navLinks.forEach(link => {
     link.addEventListener("click", () => {
         closeMenu();
     });
 });
 
+// Close menu after clicking in blank
 headerNavigation.addEventListener("click", (e) => {
     if (!e.target.closest("ul")) {
         closeMenu();
@@ -55,38 +57,29 @@ headerNavigation.addEventListener("click", (e) => {
 
 // COLLAPSE
 const productsItems = document.querySelectorAll(".products__item");
+const progressTime = 10000;
 
+// Update ative collapse
 function activeCollapse(index) {
-    productsItems.forEach(item => {
-        item.classList.remove("active");
-    });
-
-    productsItems[index].classList.add("active");
-    const progressBar = productsItems[index].querySelector(".progressbar__progression");
+    productsItems.forEach(item => item.classList.remove("active"));
+    const currentItem = productsItems[index];
+    currentItem.classList.add("active");
+    const progressBar = currentItem.querySelector(".progressbar__progression");
     progressBar.style.width = "0%";
-
-    const progressTime = 10000;
-
-    let startTime = Date.now();
-    let endTime = startTime + progressTime;
-
-    function updateProgressBar() {
-        const now = Date.now();
-        const elapsedTime = now - startTime;
-        const progress = Math.min(100, (elapsedTime / progressTime) * 100);
-
-        progressBar.style.width = progress + "%";
-
-        if (now < endTime) {
-            requestAnimationFrame(updateProgressBar);
-        }
-    }
-
-    updateProgressBar();
-
-    setTimeout(() => {
-        activeCollapse((index + 1) % productsItems.length);
-    }, progressTime);
+    updateProgressBar(progressBar, Date.now());
+    setTimeout(() => activeCollapse((index + 1) % productsItems.length), progressTime);
 }
 
+// Update progress bar
+function updateProgressBar(progressBar, startTime) {
+    const now = Date.now();
+    const elapsedTime = now - startTime;
+    const progress = Math.min(100, (elapsedTime / progressTime) * 100);
+    progressBar.style.width = progress + "%";
+    if (now - startTime < progressTime) {
+        requestAnimationFrame(() => updateProgressBar(progressBar, startTime));
+    }
+}
+
+// Start collapse system with first item
 activeCollapse(0);

@@ -47,6 +47,7 @@
         border-radius: $radius-l;
         overflow: hidden;
         cursor: pointer;
+        min-height: 71px;
 
         h2 {
             padding: $spacing-l;
@@ -60,7 +61,7 @@
         &.active {
             justify-content: flex-start;
             gap: $spacing-s;
-            pointer-events: none;
+            height: 100%;
 
             .progression__toggle, .progressbar, p.small {
               display: block;
@@ -77,6 +78,7 @@
 
             > .products__description {
                 max-height: 100%;
+                height: 100%;
             }
         }
     }
@@ -87,7 +89,6 @@
 
         @media (min-width: $breakpoint-l) {
             max-width: 480px;
-            height: 420px;
             object-fit: cover;
         }
     }
@@ -96,7 +97,7 @@
         max-height: 0;
         overflow: hidden;
         position: relative;
-        transition: max-height .3s ease;
+        transition: .3s ease-in-out;
     }
 
     &__slide {
@@ -124,6 +125,7 @@
 
             & img {
               height: 320px;
+              width: auto;
             }
         }
     }
