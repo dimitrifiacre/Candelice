@@ -36,3 +36,64 @@
 @function theme($key) {
     @return map-get($theme-map, $key);
 }
+
+// SCROLLDOWN ANIMATION
+@keyframes scrolldown-mobile {
+    0% {
+        transform: translateY(-1.5px);
+    }
+
+    50% {
+        transform: translateY(4px);
+    }
+
+    100% {
+        transform: translateY(-1.5px);
+    }
+}
+
+@keyframes scrolldown-desktop {
+    0% {
+        transform: translateY(-8px);
+    }
+
+    50% {
+        transform: translateY(12px);
+    }
+
+    100% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes flame {
+    0% {
+        transform: scaleX(1) skew(0deg) rotate(0deg);
+        filter: drop-shadow(0px 0px 10px rgba(246, 172, 90, 0.35));
+    }
+
+    20% {
+        transform: scaleX(0.9) skew(1deg) rotate(3deg);
+        filter: drop-shadow(0px 0px 6px rgba(246, 172, 90, 0.20));
+    }
+
+    40% {
+        transform: scaleX(1) skew(0deg) rotate(0deg);
+        filter: drop-shadow(0px 0px 8px rgba(246, 172, 90, 0.30));
+    }
+
+    60% {
+        transform: scaleX(0.9) skew(-1deg) rotate(-2deg);
+        filter: drop-shadow(0px 0px 6px rgba(246, 172, 90, 0.15));
+    }
+
+    80% {
+        transform: scaleX(1) skew(1deg) rotate(1deg);
+        filter: drop-shadow(0px 0px 7px rgba(246, 172, 90, 0.25));
+    }
+
+    100% {
+        transform: scaleX(1) skew(0deg) rotate(0deg);
+        filter: drop-shadow(0px 0px 10px rgba(246, 172, 90, 0.40));
+    }
+}

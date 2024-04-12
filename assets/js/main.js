@@ -15,6 +15,12 @@ function onScroll() {
 
 window.addEventListener("scroll", onScroll);
 
+// SET DEFAULT THEME
+document.addEventListener("DOMContentLoaded", () => {
+    localStorage.getItem("theme") || localStorage.setItem("theme", "light");
+    document.documentElement.classList.add(localStorage.getItem("theme") + "-theme");
+});
+
 // NAVBAR
 const menuToggle = document.getElementById("menu-toggle");
 const headerNavigation = document.querySelector(".header__navigation");
@@ -37,6 +43,7 @@ menuToggle.addEventListener("click", () => {
     headerNavigation.classList.toggle("active");
     header.classList.toggle("active");
 
+    // Change menu icon
     if (headerNavigation.classList.contains("active")) {
         nav.style.top = "0px";
         menuToggleIcon.classList.remove("icon-menu");
@@ -68,6 +75,11 @@ themeToggle.forEach(toggle => {
         document.documentElement.classList.toggle("dark-theme");
         document.documentElement.classList.toggle("light-theme");
 
+        // Set new theme
+        const selectedTheme = document.documentElement.classList.contains("light-theme") ? "light" : "dark";
+        localStorage.setItem("theme", selectedTheme);
+
+        // Change theme icon
         themeToggleIcons.forEach(icon => {
             if (document.documentElement.classList.contains("dark-theme")) {
                 icon.classList.remove("icon-sun");
@@ -78,10 +90,6 @@ themeToggle.forEach(toggle => {
             }
         });
     });
-
-    setTimeout(() => {
-        document.documentElement.classList.remove("no-transition");
-    }, 500);
 });
 
 // COLLAPSE

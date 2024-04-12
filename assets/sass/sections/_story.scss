@@ -115,6 +115,20 @@
             @include breakpoint-l {
                 display: flex;
             }
+
+            svg {
+                overflow: visible;
+
+                .candle-flame {
+                    transform-origin: 95px 60px;
+                    animation: 5s ease-in-out flame infinite;
+
+                }
+
+                .bottom:nth-child(1) {
+                    fill: theme("neutral-200");
+                }
+            }
         }
 
         &__scrolldown {
@@ -127,7 +141,7 @@
             height: 44px;
             background: transparent;
             cursor: pointer;
-            border: 3px solid $neutral-200;
+            border: 3px solid theme("neutral-200");
             border-radius: $radius-round;
 
             @include breakpoint-s {
@@ -143,6 +157,19 @@
                 svg {
                     width: 22px;
                     height: 22px;
+                }
+            }
+
+            svg path {
+                fill: theme("neutral-900");
+            }
+
+            svg {
+                animation: 2.5s ease-in-out scrolldown-mobile infinite;
+
+                @include breakpoint-l {
+                    display: flex;
+                    animation: 2.5s ease-in-out scrolldown-desktop infinite;
                 }
             }
         }

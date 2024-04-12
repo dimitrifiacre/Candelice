@@ -52,11 +52,11 @@
                 height: 100%;
 
                 .progression__toggle, .progressbar, p.small {
-                display: block;
+                display: flex;
                 }
 
                 p {
-                    display: block;
+                    display: flex;
                     padding: 0rem 1.5rem 4rem 1.5rem;
                 }
 

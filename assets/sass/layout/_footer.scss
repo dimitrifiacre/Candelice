@@ -107,6 +107,7 @@
 
         &__socialmedia {
             display: flex;
+            gap: $spacing-s;
 
             a {
                 color: $primary-800;

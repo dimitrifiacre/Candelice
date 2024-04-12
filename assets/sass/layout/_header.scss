@@ -12,18 +12,16 @@
         transition: 0.15s ease;
 
         & button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            background: transparent;
-            color: inherit;
-            border: none;
-            cursor: pointer;
+            @include breakpoint-l {
+                display: none!important;
+            }
+        }
+
+        &__button--mobile {
+            display: flex!important;
 
             @include breakpoint-l {
-                display: none;
+                display: none!important;
             }
         }
 

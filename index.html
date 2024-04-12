@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" class="light-theme">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,7 @@
 <body>
     <header>
         <nav>
-            <button class="theme-toggle header__button-mobile" aria-label="Thème">
+            <button class="theme-toggle btn icon transparent header__button--mobile" aria-label="Thème">
                 <span class="icon-sun"></span>
             </button>
             <a href="#" class="header__logo" aria-label="Revenir au début">
@@ -37,10 +37,10 @@
                     <li><a href="#products">Nos produits</a></li>
                     <li><a href="#manufacturing">La fabrication</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><button class="theme-toggle header__button--desktop" aria-label="Thème"><span class="icon-sun"></span></button></li>
+                    <li><button class="theme-toggle btn icon transparent header__button--desktop" aria-label="Thème"><span class="icon-sun"></span></button></li>
                 </ul>
             </div>
-            <button id="menu-toggle" aria-label="Menu">
+            <button id="menu-toggle" class="btn icon transparent" aria-label="Menu">
                 <span class="icon-menu"></span>
             </button>
         </nav>
@@ -68,7 +68,7 @@
                     </div>
                     <div class="story__candle">
                         <svg xmlns="http://www.w3.org/2000/svg" width="196" height="287" viewBox="0 0 196 287" fill="none">
-                            <ellipse cx="97.815" cy="255.98" rx="97.815" ry="30.5238" fill="black" fill-opacity="0.1" class="bottom"/>
+                            <ellipse cx="97.815" cy="255.98" rx="97.815" ry="30.5238" fill="black" class="bottom"/>
                             <ellipse cx="97.8146" cy="253.205" rx="85.328" ry="23.5866" fill="#F0725C" class="bottom"/>
                         
                             <mask id="mask0_3581_442" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="5" y="80" width="186" height="174">
@@ -82,16 +82,17 @@
                             <g class="candle-top">
                               <ellipse cx="97.815" cy="80.4674" rx="92.2652" ry="26.3615" fill="#F78672" />
                               <ellipse cx="97.815" cy="80.4677" rx="41.6234" ry="10.4059" fill="#F0725C" />
-                              <path d="M108.196 46.8774C113.112 58.9547 105.082 64.6651 94.004 63.9719C84.8268 63.3977 78.0442 57.9218 79.8117 42.2396C82.0225 28.6363 84.2504 22.2822 88.3625 13.3006C90.5508 8.52118 97.3606 8.80237 98.7432 13.8739C101.58 24.279 101.245 29.8004 108.196 46.8774Z" fill="#F6AC5A" />
+                              <path class="candle-flame" d="M108.196 46.8774C113.112 58.9547 105.082 64.6651 94.004 63.9719C84.8268 63.3977 78.0442 57.9218 79.8117 42.2396C82.0225 28.6363 84.2504 22.2822 88.3625 13.3006C90.5508 8.52118 97.3606 8.80237 98.7432 13.8739C101.58 24.279 101.245 29.8004 108.196 46.8774Z" fill="#F6AC5A" />
                               <path d="M94.3464 56.8811C94.6474 66.0824 95.2024 71.1605 97.1213 80.1208" stroke="#151515" stroke-width="8" stroke-linecap="round" />
                             </g>
                         </svg>
                     </div>
                 </div>
                 <button class="story__scrolldown" aria-label="Étape suivante">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M-0.0991953 1.40479C0.229532 0.797723 0.988143 0.572085 1.59521 0.900812C5.74713 3.14908 8.87666 6.42694 11.7101 9.92749C14.5435 6.42694 17.673 3.1491 21.8249 0.900827C22.432 0.5721 23.1906 0.797738 23.5193 1.4048C23.848 2.01187 23.6224 2.77048 23.0153 3.09921C18.8533 5.35296 15.7533 8.80054 12.6941 12.7063C12.4572 13.0088 12.0943 13.1855 11.7101 13.1855C11.3258 13.1855 10.9629 13.0088 10.726 12.7063C7.66677 8.80054 4.56682 5.35294 0.404782 3.09919C-0.202284 2.77047 -0.427923 2.01186 -0.0991953 1.40479ZM-0.0991953 11.4048C0.229532 10.7977 0.988143 10.5721 1.59521 10.9008C5.74713 13.1491 8.87666 16.4269 11.7101 19.9275C14.5435 16.4269 17.673 13.1491 21.8249 10.9008C22.432 10.5721 23.1906 10.7977 23.5193 11.4048C23.848 12.0119 23.6224 12.7705 23.0153 13.0992C18.8533 15.353 15.7533 18.8005 12.6941 22.7063C12.4572 23.0088 12.0943 23.1855 11.7101 23.1855C11.3258 23.1855 10.9629 23.0088 10.726 22.7063C7.66677 18.8005 4.56682 15.3529 0.404782 13.0992C-0.202284 12.7705 -0.427923 12.0119 -0.0991953 11.4048Z" fill="#151515"/>
-                    </svg>
+                    <svg width="16" height="16" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.15155 0.632074C0.481369 0.0462793 1.2425 -0.171453 1.85158 0.145756C6.01728 2.31524 9.1572 5.47824 12 8.85614C14.8428 5.47824 17.9827 2.31526 22.1484 0.14577C22.7575 -0.171438 23.5186 0.0462938 23.8484 0.632088C24.1783 1.21788 23.9519 1.94991 23.3428 2.26712C19.1669 4.4419 16.0567 7.76868 12.9873 11.5376C12.7496 11.8295 12.3855 12 12 12C11.6145 12 11.2504 11.8295 11.0127 11.5376C7.9433 7.76867 4.83305 4.44188 0.657201 2.26711C0.048119 1.9499 -0.178268 1.21787 0.15155 0.632074Z" fill="#151515"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.15155 11.6321C0.481369 11.0463 1.2425 10.8285 1.85158 11.1458C6.01728 13.3152 9.1572 16.4782 12 19.8561C14.8428 16.4782 17.9827 13.3153 22.1484 11.1458C22.7575 10.8286 23.5186 11.0463 23.8484 11.6321C24.1783 12.2179 23.9519 12.9499 23.3428 13.2671C19.1669 15.4419 16.0567 18.7687 12.9873 22.5376C12.7496 22.8295 12.3855 23 12 23C11.6145 23 11.2504 22.8295 11.0127 22.5376C7.9433 18.7687 4.83305 15.4419 0.657201 13.2671C0.048119 12.9499 -0.178268 12.2179 0.15155 11.6321Z" fill="#151515"/>
+                    </svg>                        
                 </button>
             </div>
         </section>
@@ -105,7 +106,7 @@
                             <h2 class="h3">Les bougies</h2>
                             <div class="products__description">
                                 <p>Découvrez nos bougies parfumées, créées pour enchanter votre maison. Chaque bougie offre une expérience sensorielle unique, éveillant les sens et créant une ambiance envoûtante pour des moments de détente et d'évasion inoubliables.</p>
-                                <button class="progression__toggle" aria-label="Pause">
+                                <button class="btn icon transparent progression__toggle" aria-label="Pause">
                                     <span class="icon-pause"></span>
                                 </button>
                                 <div class="progressbar">
@@ -117,7 +118,7 @@
                             <h2 class="h3">Les fondants</h2>
                             <div class="products__description">
                                 <p>Plongez dans un océan de parfums exquis avec nos fondants de cire, conçus pour embaumer votre espace de manière discrète et naturelle. Chaque fondant libère lentement ses arômes envoûtants, créant une atmosphère captivante et relaxante, pour une expérience sensorielle inégalée.</p>
-                                <button class="progression__toggle" aria-label="Pause">
+                                <button class="btn icon transparent progression__toggle" aria-label="Pause">
                                     <span class="icon-pause"></span>
                                 </button>
                                 <div class="progressbar">
@@ -129,7 +130,7 @@
                             <h2 class="h3">Les brûle-parfums</h2>
                             <div class="products__description">
                                 <p>Explorez un univers de senteurs raffinées avec nos brûle-parfums, méticuleusement conçus pour embaumer délicatement votre espace. Chaque brûle-parfum diffuse progressivement ses arômes envoûtants, instaurant une ambiance captivante et apaisante, offrant ainsi une expérience sensorielle incomparable.</p>
-                                <button class="progression__toggle" aria-label="Pause">
+                                <button class="btn icon transparent progression__toggle" aria-label="Pause">
                                     <span class="icon-pause"></span>
                                 </button>
                                 <div class="progressbar">
@@ -278,10 +279,10 @@
                     <p>Des créations uniques façonnées à la main</p>
                 </div>
                 <div class="copyright__socialmedia">
-                    <a href="#" aria-label="Instagram">
+                    <a href="#" class="btn icon" aria-label="Instagram">
                         <span class="icon-instagram"></span>
                     </a>
-                    <a href="#" aria-label="Facebook">
+                    <a href="#" class="btn icon" aria-label="Facebook">
                         <span class="icon-facebook"></span>
                     </a>
                 </div>
