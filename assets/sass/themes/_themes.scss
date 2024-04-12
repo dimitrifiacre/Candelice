@@ -1,5 +1,6 @@
 $themes: (
   light: (
+    theme: "light",
     neutral-100: $neutral-100,
     neutral-200: $neutral-200,
     neutral-300: $neutral-300,
@@ -18,8 +19,12 @@ $themes: (
     primary-700: $primary-700,
     primary-800: $primary-800,
     header-logo: #F0725C,
+    divider-wave: "../img/divider_wave-light.svg",
+    divider-tilt: "../img/divider_tilt-light.svg",
+    picture-pin: "../img/picture_pin-light.svg",
   ),
   dark: (
+    theme: "dark",
     neutral-100: $neutral-900,
     neutral-200: $neutral-800,
     neutral-300: $neutral-700,
@@ -38,5 +43,8 @@ $themes: (
     primary-700: $primary-200,
     primary-800: $primary-100,
     header-logo: $neutral-100,
+    divider-wave: "../img/divider_wave-dark.svg",
+    divider-tilt: "../img/divider_tilt-dark.svg",
+    picture-pin: "../img/picture_pin-dark.svg",
   ),
 );

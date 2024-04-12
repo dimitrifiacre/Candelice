@@ -1,69 +1,71 @@
-.manufacturing {
-    margin-top: $spacing-4xl;
-
-    @include breakpoint-l {
-        margin-top: 14rem;
-    }
-
-    &__content {
-        display: flex;
-        flex-direction: column;
-        gap: $spacing-2xl;
-    }
-
-    &__step {
-        display: flex;
-        flex-direction: column;
-        gap: $spacing-l;
+@include themes($themes) {
+    .manufacturing {
+        margin-top: $spacing-4xl;
 
         @include breakpoint-l {
-            flex-direction: row;
-            align-items: center;
-            gap: $spacing-xl;
-            max-width: 920px;
+            margin-top: 14rem;
+        }
 
-            &:nth-child(even) {
-                flex-direction: row-reverse;
+        &__content {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-2xl;
+        }
+
+        &__step {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-l;
+
+            @include breakpoint-l {
+                flex-direction: row;
+                align-items: center;
+                gap: $spacing-xl;
+                max-width: 920px;
+
+                &:nth-child(even) {
+                    flex-direction: row-reverse;
+                }
             }
         }
-    }
 
-    &__description {
-        display: flex;
-        flex-direction: column;
-        gap: $spacing-s;
-    }
+        &__description {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-s;
+        }
 
-    &__title {
-        display: flex;
-        align-items: center;
-        gap: $spacing-s;
-
-        & span {
-            height: 32px;
-            width: 100%;
-            max-width: 32px;
+        &__title {
             display: flex;
             align-items: center;
-            justify-content: center;
-            background: $neutral-900;
-            color: $neutral-100;
-            border-radius: $radius-round;
-            font-family: $font-heading;
-            font-size: 24px;
+            gap: $spacing-s;
+
+            & span {
+                height: 32px;
+                width: 100%;
+                max-width: 32px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: theme("neutral-900");
+                color: theme("neutral-100");
+                border-radius: $radius-round;
+                font-family: $font-heading;
+                font-size: 24px;
+            }
         }
-    }
 
 
-    &__picture {
-        width: 100%;
-        height: auto;
-        border-radius: $radius-l;
-        object-fit: cover;
+        &__picture {
+            width: 100%;
+            height: auto;
+            border-radius: $radius-l;
+            object-fit: cover;
 
-        @include breakpoint-l {
-            width: 260px;
-            height: 260px;
+            @include breakpoint-l {
+                width: 260px;
+                height: 260px;
+            }
         }
     }
 }

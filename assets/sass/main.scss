@@ -6,11 +6,18 @@
 
 html {
     scroll-behavior: smooth;
+    color-scheme: light;
 }
 
-body {
-    background: $neutral-100;
-    color: $neutral-900;
+html.dark-theme {
+    color-scheme: dark;
+}
+
+@include themes($themes) {
+    body {
+        background: theme("neutral-100");
+        color: theme("neutral-900");
+    }
 }
 
 section {

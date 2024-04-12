@@ -1,135 +1,149 @@
-.story {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-
-    &__content {
+@include themes($themes) {
+    .story {
+        height: 100vh;
         display: flex;
         flex-direction: column;
+        position: relative;
 
-        @include breakpoint-l {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: -1%;
             width: 100%;
-            gap: $spacing-2xl;
-        }
-    }
-
-    &__step {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: $spacing-l;
-    }
-
-    &__title {
-        display: flex;
-        align-items: center;
-        background: $primary-100;
-        padding: $spacing-xs $spacing-m;
-        border-radius: $radius-round;
-        font-size: 1.125rem;
-
-        @media (min-width: $breakpoint-l) {
-            font-size: 1.625rem;
-            padding: $spacing-xs $spacing-l;
-        }
-    }
-
-    &__description {
-        display: flex;
-        flex-direction: column;
-        gap: $spacing-l;
-
-        @include breakpoint-s {
-            gap: $spacing-xl;
+            height: calc(100vw * 21px / 393px);
+            background: url(theme("divider-tilt")) no-repeat center bottom / contain;
+            background-size: 100%;
         }
 
-        @include breakpoint-l {
-            flex-direction: row;
+        &__content {
+            display: flex;
+            flex-direction: column;
+
+            @include breakpoint-l {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                gap: $spacing-2xl;
+            }
+        }
+
+        &__step {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: $spacing-l;
+        }
+
+        &__title {
+            display: flex;
             align-items: center;
+            color: theme("neutral-900");
+            background: theme("primary-100");
+            padding: $spacing-xs $spacing-m;
+            border-radius: $radius-round;
+            font-size: 1.125rem;
 
-            p {
+            @media (min-width: $breakpoint-l) {
+                font-size: 1.625rem;
+                padding: $spacing-xs $spacing-l;
+            }
+        }
+
+        &__description {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-l;
+
+            @include breakpoint-s {
+                gap: $spacing-xl;
+            }
+
+            @include breakpoint-l {
+                flex-direction: row;
+                align-items: center;
+
+                p {
+                    max-width: 380px;
+                }
+            }
+        }
+        
+        &__picture > img {
+            width: 84%;
+            height: auto;
+            max-width: 420px;
+            border-radius: $radius-l;
+            transform: rotate(-3deg);
+
+            @include breakpoint-l {
+                width: max-content;
+                max-width: 280px;
+            }
+
+            @include breakpoint-xl {
                 max-width: 380px;
             }
         }
-    }
-    
-    &__picture > img {
-        width: 84%;
-        height: auto;
-        max-width: 420px;
-        border-radius: $radius-l;
-        transform: rotate(-3deg);
 
-        @include breakpoint-l {
-            width: max-content;
-            max-width: 280px;
-        }
-
-        @include breakpoint-xl {
-            max-width: 380px;
-        }
-    }
-
-    &__picture {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        &:before {
-            content: "";
-            background: url("../img/picture_pin.svg") no-repeat center / cover;
-            display: block;
-            position: absolute;
-            width: 76px;
-            height: 21px;
-            transform: rotate(-3deg);
-            z-index: 1;     
-            top: -13px;
-            left: 0;
-            right: 0;
-            margin: auto;
-        }
-    }
-
-    &__candle {
-        display: none;
-
-        @include breakpoint-l {
+        &__picture {
+            position: relative;
             display: flex;
-        }
-    }
+            flex-direction: column;
+            align-items: center;
 
-    &__scrolldown {
-        position: absolute;
-        bottom: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 44px;
-        height: 44px;
-        background: transparent;
-        cursor: pointer;
-        border: 3px solid $neutral-200;
-        border-radius: $radius-round;
-
-        @include breakpoint-s {
-            bottom: 54px;
-            width: 56px;
-            height: 56px;
+            &:before {
+                content: "";
+                background: url(theme("picture-pin")) no-repeat center / cover;
+                display: block;
+                position: absolute;
+                width: 76px;
+                height: 21px;
+                transform: rotate(-3deg);
+                z-index: 1;     
+                top: -13px;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
         }
 
-        @include breakpoint-l {
-            border: none;
-            bottom: 96px;
+        &__candle {
+            display: none;
 
-            svg {
-                width: 22px;
-                height: 22px;
+            @include breakpoint-l {
+                display: flex;
+            }
+        }
+
+        &__scrolldown {
+            position: absolute;
+            bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            cursor: pointer;
+            border: 3px solid $neutral-200;
+            border-radius: $radius-round;
+
+            @include breakpoint-s {
+                bottom: 54px;
+                width: 56px;
+                height: 56px;
+            }
+
+            @include breakpoint-l {
+                border: none;
+                bottom: 96px;
+
+                svg {
+                    width: 22px;
+                    height: 22px;
+                }
             }
         }
     }

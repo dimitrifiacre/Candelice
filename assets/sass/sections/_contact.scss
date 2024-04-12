@@ -1,9 +1,36 @@
-.contact {
-    &__form {
-        display: flex;
-        flex-direction: column;
-        gap: $spacing-l;
-        width: 100%;
-        max-width: 620px;
+@include themes($themes) {
+    .contact {
+        position: relative;
+
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: -1%;
+            width: 100%;
+            height: calc(100vw * 21px / 393px);
+            background: url(theme("divider-tilt")) no-repeat center bottom / contain;
+            background-size: 100%;
+        }
+
+        @include breakpoint-l {
+            .container {
+                padding-bottom: $spacing-3xl;
+            }
+        }
+
+        @include breakpoint-xl {
+            .container {
+                padding-bottom: 10rem;
+            }
+        }
+
+        &__form {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-l;
+            width: 100%;
+            max-width: 620px;
+        }
     }
 }

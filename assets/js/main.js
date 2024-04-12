@@ -15,12 +15,15 @@ function onScroll() {
 
 window.addEventListener("scroll", onScroll);
 
-// MENU ON CLICK
-const navbarToggle = document.getElementById("navbar-toggle");
+// NAVBAR
+const menuToggle = document.getElementById("menu-toggle");
 const headerNavigation = document.querySelector(".header__navigation");
 const nav = document.querySelector(".header__navigation ul");
 const header = document.querySelector("header");
 const navLinks = document.querySelectorAll(".header__navigation ul li a");
+const menuToggleIcon = document.querySelector("#menu-toggle span");
+const themeToggle = document.querySelectorAll(".theme-toggle");
+const themeToggleIcons = document.querySelectorAll(".theme-toggle span");
 
 // Close menu
 function closeMenu() {
@@ -30,14 +33,18 @@ function closeMenu() {
 }
 
 // Toggle menu
-navbarToggle.addEventListener("click", () => {
+menuToggle.addEventListener("click", () => {
     headerNavigation.classList.toggle("active");
     header.classList.toggle("active");
 
     if (headerNavigation.classList.contains("active")) {
         nav.style.top = "0px";
+        menuToggleIcon.classList.remove("icon-menu");
+        menuToggleIcon.classList.add("icon-close");
     } else {
         nav.style.top = "-290px";
+        menuToggleIcon.classList.remove("icon-close");
+        menuToggleIcon.classList.add("icon-menu");
     }
 });
 
@@ -55,11 +62,32 @@ headerNavigation.addEventListener("click", (e) => {
     }
 });
 
+// Toggle theme
+themeToggle.forEach(toggle => {
+    toggle.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark-theme");
+        document.documentElement.classList.toggle("light-theme");
+
+        themeToggleIcons.forEach(icon => {
+            if (document.documentElement.classList.contains("dark-theme")) {
+                icon.classList.remove("icon-sun");
+                icon.classList.add("icon-moon");
+            } else {
+                icon.classList.remove("icon-moon");
+                icon.classList.add("icon-sun");
+            }
+        });
+    });
+
+    setTimeout(() => {
+        document.documentElement.classList.remove("no-transition");
+    }, 500);
+});
+
 // COLLAPSE
 const productsItems = document.querySelectorAll(".products__item");
-const progressTime = 10000;
+const progressTime = 12000;
 const productImage = document.querySelector(".products__picture");
-
 
 // Update ative collapse
 function activeCollapse(index) {

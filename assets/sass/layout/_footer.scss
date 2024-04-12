@@ -1,138 +1,127 @@
-.reinsurance {
-    display: flex;
-    flex-direction: column;
-    background-color: $primary-100;
-    position: relative;
-
-    &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        bottom: -1px;
-        width: 100%;
-        height: 100%;
-        max-height: 140px;
-        background: url("../img/separator_orange.svg") no-repeat center bottom / contain;
-    }
-
-    &:before {
-        content: "";
-        position: absolute;
-        right: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: $primary-100;
-        z-index: -1;
-        transform: skewY(-1.5deg);
-        transform-origin: top left;
-    }
-    
-    .container {
-        padding-top: $spacing-xl;
-
-        @include breakpoint-l {
-            padding-bottom: 8rem;
-        }
-
-        @include breakpoint-xl {
-            padding-bottom: 12rem;
-        }
-    }
-
-    &__content {
+@include themes($themes) {
+    .reinsurance {
         display: flex;
         flex-direction: column;
-        gap: $spacing-xl;
+        background-color: theme("primary-100");
+        position: relative;
 
-        @include breakpoint-l {
-            flex-direction: row;
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: -1px;
             width: 100%;
-            justify-content: space-between;
+            height: calc(100vw * 26px / 393px);
+            background: url("../img/divider_wave-orange.svg") no-repeat center bottom / contain;
+            background-size: 100%;
         }
-    }
-
-    &__item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: $spacing-m;
-        width: 100%;
-        max-width: 300px;
-    }
-
-    &__description {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: $spacing-3xs;
-
-        p {
-            text-align: center;
-            font-size: 1rem;
-            line-height: 1.375rem;
-            text-align: center;
-        }
-    }
-}
-
-.copyright {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: $primary-500;
-    position: relative;
-    padding: 0 $spacing-l;
-
-    .container {
-        gap: $spacing-xl;
-
-        @include breakpoint-l {
-            flex-direction: row;
-            justify-content: space-between;
-        }
-    }
-
-    &__logo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: $spacing-s;
-        color: $primary-800;
-
-        @include breakpoint-l {
-            align-items: flex-start;
-        }
-
-        svg path {
-            fill: $primary-800;
-        }
-
-        p {
-            text-align: center;
+        
+        .container {
+            padding-top: $spacing-xl;
 
             @include breakpoint-l {
-                text-align: left;
+                padding-bottom: 8rem;
+            }
+
+            @include breakpoint-xl {
+                padding-bottom: 12rem;
+            }
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-xl;
+
+            @include breakpoint-l {
+                flex-direction: row;
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: $spacing-m;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        &__description {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: $spacing-3xs;
+
+            p {
+                text-align: center;
+                font-size: 1rem;
+                line-height: 1.375rem;
+                text-align: center;
             }
         }
     }
 
-    &__socialmedia {
+    .copyright {
         display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: $primary-500;
+        position: relative;
+        padding: 0 $spacing-l;
 
-        a {
-            color: $primary-800;
-            text-decoration: none;
-            display: flex;
-            height: 44px;
-            width: 44px;
-            justify-content: center;
-            align-items: center;
+        .container {
+            gap: $spacing-xl;
 
-            span {
-                font-size: 2rem;
+            @include breakpoint-l {
+                flex-direction: row;
+                justify-content: space-between;
             }
-        
+        }
+
+        &__logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: $spacing-s;
+            color: $primary-800;
+
+            @include breakpoint-l {
+                align-items: flex-start;
+            }
+
+            svg path {
+                fill: $primary-800;
+            }
+
+            p {
+                text-align: center;
+
+                @include breakpoint-l {
+                    text-align: left;
+                }
+            }
+        }
+
+        &__socialmedia {
+            display: flex;
+
+            a {
+                color: $primary-800;
+                text-decoration: none;
+                display: flex;
+                height: 44px;
+                width: 44px;
+                justify-content: center;
+                align-items: center;
+
+                span {
+                    font-size: 2rem;
+                }
+            
+            }
         }
     }
 }

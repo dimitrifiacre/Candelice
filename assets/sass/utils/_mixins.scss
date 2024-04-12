@@ -24,7 +24,7 @@
 }
 
 // THEME
-@mixin themify($themes) {
+@mixin themes($themes) {
     @each $name, $values in $themes {
         .#{$name}-theme {
             $theme-map: $values !global;
