@@ -1,4 +1,7 @@
 // SCROLL DETECTION
+let lastScrollTop = 0;
+let isScrollingDown = false;
+
 function onScroll() {
     const header = document.querySelector("header");
     const scrollPosition = window.scrollY;
@@ -13,7 +16,7 @@ function onScroll() {
     productsSlides.style.transform = `rotate(-3deg) translateX(${-translateValue}px)`;
 }
 
-window.addEventListener("scroll", onScroll);
+window.addEventListener("scroll", () => requestAnimationFrame(onScroll));
 
 // SET DEFAULT THEME
 document.addEventListener("DOMContentLoaded", () => {
@@ -57,9 +60,7 @@ menuToggle.addEventListener("click", () => {
 
 // Close menu after clicking on link
 navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-        closeMenu();
-    });
+    link.addEventListener("click", closeMenu);
 });
 
 // Close menu after clicking in blank
@@ -94,29 +95,31 @@ themeToggle.forEach(toggle => {
 
 // COLLAPSE
 const productsItems = document.querySelectorAll(".products__item");
-const progressTime = 12000;
 const productImage = document.querySelector(".products__picture");
+const progressTime = 12000;
 
-// Update ative collapse
-function activeCollapse(index) {
-    productsItems.forEach(item => item.classList.remove("active"));
-    const currentItem = productsItems[index];
-    currentItem.classList.add("active");
+// Update active collapse
+function activeCollapse(i) {
+    const currentItem = productsItems[i];
     const imgPath = currentItem.getAttribute("data-img");
-    productImage.setAttribute("src", imgPath);
     const progressBar = currentItem.querySelector(".progressbar__progression");
-    progressBar.style.width = "0%";
+
+    productsItems.forEach(item => item.classList.remove("active"));
+    currentItem.classList.add("active");
+    productImage.setAttribute("src", imgPath);
     updateProgressBar(progressBar, Date.now());
-    setTimeout(() => activeCollapse((index + 1) % productsItems.length), progressTime);
+    setTimeout(() => activeCollapse((i + 1) % productsItems.length), progressTime);
 }
 
 // Update progress bar
 function updateProgressBar(progressBar, startTime) {
-    const now = Date.now();
-    const elapsedTime = now - startTime;
+    const dateNow = Date.now();
+    const elapsedTime = dateNow - startTime;
     const progress = Math.min(100, (elapsedTime / progressTime) * 100);
+
     progressBar.style.width = progress + "%";
-    if (now - startTime < progressTime) {
+
+    if (dateNow - startTime < progressTime) {
         requestAnimationFrame(() => updateProgressBar(progressBar, startTime));
     }
 }
