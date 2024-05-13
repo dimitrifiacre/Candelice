@@ -39,14 +39,17 @@ function closeMenu() {
     headerNavigation.classList.remove("active");
     header.classList.remove("active");
     nav.style.top = "-290px";
-}
+};
 
 // Toggle menu
 menuToggle.addEventListener("click", () => {
     headerNavigation.classList.toggle("active");
     header.classList.toggle("active");
 
-    // Change menu icon
+    changeMenuIcon();
+});
+
+function changeMenuIcon() {
     if (headerNavigation.classList.contains("active")) {
         nav.style.top = "0px";
         menuToggleIcon.classList.remove("icon-menu");
@@ -56,17 +59,21 @@ menuToggle.addEventListener("click", () => {
         menuToggleIcon.classList.remove("icon-close");
         menuToggleIcon.classList.add("icon-menu");
     }
-});
+};
 
 // Close menu after clicking on link
 navLinks.forEach(link => {
-    link.addEventListener("click", closeMenu);
+    link.addEventListener("click", () => {
+        closeMenu();
+        changeMenuIcon();
+    });
 });
 
 // Close menu after clicking in blank
 headerNavigation.addEventListener("click", (e) => {
     if (!e.target.closest("ul")) {
         closeMenu();
+        changeMenuIcon();
     }
 });
 
@@ -109,7 +116,7 @@ function activeCollapse(i) {
     productImage.setAttribute("src", imgPath);
     updateProgressBar(progressBar, Date.now());
     setTimeout(() => activeCollapse((i + 1) % productsItems.length), progressTime);
-}
+};
 
 // Update progress bar
 function updateProgressBar(progressBar, startTime) {
@@ -122,7 +129,7 @@ function updateProgressBar(progressBar, startTime) {
     if (dateNow - startTime < progressTime) {
         requestAnimationFrame(() => updateProgressBar(progressBar, startTime));
     }
-}
+};
 
 // Start collapse system with first item
 activeCollapse(0);
@@ -132,3 +139,33 @@ document.addEventListener("visibilitychange", () => {
     const favicon = document.querySelector("link[rel~='icon']");
     favicon.href = document.hidden ? "assets/img/favicon-inactive.png" : "assets/img/favicon.png";
 });
+
+
+// STORY SECTION
+function detectScrollPosition() {
+    const story = document.querySelector(".story");
+    const storyTop = story.getBoundingClientRect().top;
+
+    if (storyTop <= 0) {
+        const scrollPosition = window.scrollY;
+        const storyHeight = story.clientHeight;
+        const sectionHeight = storyHeight / 2.8;
+        const firstVisibleSectionTop = Math.max(0, storyTop + 80);
+        let currentStep = Math.floor((scrollPosition - firstVisibleSectionTop) / sectionHeight);
+
+        currentStep = Math.min(2, currentStep);
+        const storyStep = document.querySelectorAll(".story__steps > .story__step");
+
+        storyStep.forEach((step, i) => {
+            if (i === currentStep) {
+                step.style.opacity = 1;
+            } else {
+                step.style.opacity = 0;
+            }
+        });
+    }
+}
+
+window.addEventListener("scroll", detectScrollPosition);
+
+detectScrollPosition();

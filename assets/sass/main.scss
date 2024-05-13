@@ -37,6 +37,7 @@ section {
     @include breakpoint-l {
         width: 100%;
         max-width: 1280px;
+        gap: $spacing-3xl;
     }
 }
 
