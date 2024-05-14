@@ -143,26 +143,22 @@ document.addEventListener("visibilitychange", () => {
 
 // STORY SECTION
 function detectScrollPosition() {
-    const story = document.querySelector(".story");
-    const storyTop = story.getBoundingClientRect().top;
+    const storyTop = document.querySelector(".story").getBoundingClientRect().top;
 
     if (storyTop <= 0) {
-        const scrollPosition = window.scrollY;
-        const storyHeight = story.clientHeight;
-        const sectionHeight = storyHeight / 2.8;
-        const firstVisibleSectionTop = Math.max(0, storyTop + 80);
-        let currentStep = Math.floor((scrollPosition - firstVisibleSectionTop) / sectionHeight);
-
-        currentStep = Math.min(2, currentStep);
+        let currentStep = Math.floor(-storyTop / 800);
+        currentStep = Math.min(3, currentStep);
         const storyStep = document.querySelectorAll(".story__steps > .story__step");
 
-        storyStep.forEach((step, i) => {
+        for (let i = 0; i < storyStep.length; i++) {
             if (i === currentStep) {
-                step.style.opacity = 1;
+                storyStep[i].style.opacity = 1;
+                storyStep[i].querySelector('.story__picture').style.transform = "scale(1)";
             } else {
-                step.style.opacity = 0;
+                storyStep[i].style.opacity = 0;
+                storyStep[i].querySelector('.story__picture').style.transform = "scale(0.9)";
             }
-        });
+        }
     }
 }
 
