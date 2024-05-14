@@ -145,6 +145,7 @@ document.addEventListener("visibilitychange", () => {
 function detectScrollPosition() {
     const storyTop = document.querySelector(".story").getBoundingClientRect().top;
 
+    // Change current step according to progress into story section
     if (storyTop <= 0) {
         let currentStep = Math.floor(-storyTop / 800);
         currentStep = Math.min(3, currentStep);
@@ -160,6 +161,19 @@ function detectScrollPosition() {
             }
         }
     }
+
+    // Change size's candle during scrolling
+    const candleBody = document.querySelector('.candle-body');
+    const candleTop = document.querySelector('.candle-top');
+
+    const scrollPercentage = Math.min(1, Math.max(0, -storyTop / 3200));
+
+    const translateCandleBody = scrollPercentage * 51.5;
+    const translateCandleTop = scrollPercentage * 50;
+    const scaleCandleTop = 1 - (scrollPercentage * 0.064);
+
+    candleBody.style.transform = `translateY(${translateCandleBody}%)`;
+    candleTop.style.transform = `translateY(${translateCandleTop}%) scale(${scaleCandleTop})`;
 }
 
 window.addEventListener("scroll", detectScrollPosition);
