@@ -90,11 +90,11 @@ themeToggle.forEach(toggle => {
         // Change theme icon
         themeToggleIcons.forEach(icon => {
             if (document.documentElement.classList.contains("dark-theme")) {
-                icon.classList.remove("icon-sun");
-                icon.classList.add("icon-moon");
-            } else {
                 icon.classList.remove("icon-moon");
                 icon.classList.add("icon-sun");
+            } else {
+                icon.classList.remove("icon-sun");
+                icon.classList.add("icon-moon");
             }
         });
     });
