@@ -100,39 +100,26 @@ themeToggle.forEach(toggle => {
     });
 });
 
-// COLLAPSE
+// PRODUCTS SECTION
 const productsItems = document.querySelectorAll(".products__item");
-const productImage = document.querySelector(".products__picture");
-const progressTime = 12000;
+const productImages = document.querySelectorAll(".products__picture img");
 
-// Update active collapse
-function activeCollapse(i) {
-    const currentItem = productsItems[i];
-    const imgPath = currentItem.getAttribute("data-img");
-    const progressBar = currentItem.querySelector(".progressbar__progression");
+productsItems.forEach((item, i) => {
+    item.addEventListener("click", () => {
+        if (!item.classList.contains("active")) {
+            productsItems.forEach(item => {
+                item.classList.remove("active");
+            });
 
-    productsItems.forEach(item => item.classList.remove("active"));
-    currentItem.classList.add("active");
-    productImage.setAttribute("src", imgPath);
-    updateProgressBar(progressBar, Date.now());
-    setTimeout(() => activeCollapse((i + 1) % productsItems.length), progressTime);
-};
-
-// Update progress bar
-function updateProgressBar(progressBar, startTime) {
-    const dateNow = Date.now();
-    const elapsedTime = dateNow - startTime;
-    const progress = Math.min(100, (elapsedTime / progressTime) * 100);
-
-    progressBar.style.width = progress + "%";
-
-    if (dateNow - startTime < progressTime) {
-        requestAnimationFrame(() => updateProgressBar(progressBar, startTime));
-    }
-};
-
-// Start collapse system with first item
-activeCollapse(0);
+            productImages.forEach(image => {
+                image.classList.remove("active");
+            });
+    
+            item.classList.add("active");
+            productImages[i].classList.add("active");
+        }
+    });
+});
 
 // CHANGE FAVICON
 document.addEventListener("visibilitychange", () => {
@@ -153,11 +140,9 @@ function detectScrollPosition() {
 
         for (let i = 0; i < storyStep.length; i++) {
             if (i === currentStep) {
-                storyStep[i].style.opacity = 1;
-                storyStep[i].querySelector('.story__picture').style.transform = "scale(1)";
+                storyStep[i].classList.add("active");
             } else {
-                storyStep[i].style.opacity = 0;
-                storyStep[i].querySelector('.story__picture').style.transform = "scale(0.9)";
+                storyStep[i].classList.remove("active");
             }
         }
     }

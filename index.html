@@ -57,7 +57,7 @@
                 <h2 class="h2">Notre histoire</h2>
                 <div class="story__content">
                     <div class="story__steps">
-                        <div class="story__step" style="opacity: 1;">
+                        <div class="story__step active">
                             <div class="story__step__content">
                                 <h3 class="h3 story__title">L'étincelle de ma passion</h3>
                                 <div class="story__description">
@@ -68,7 +68,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="story__step" style="opacity: 0;">
+                        <div class="story__step">
                             <div class="story__step__content">
                                 <h3 class="h3 story__title">Le chemin vers la réalisation</h3>
                                 <div class="story__description">
@@ -79,7 +79,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="story__step" style="opacity: 0;">
+                        <div class="story__step">
                             <div class="story__step__content">
                                 <h3 class="h3 story__title">Partager la lumière avec le monde</h3>
                                 <div class="story__description">
@@ -90,7 +90,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="story__step" style="opacity: 0;">
+                        <div class="story__step">
                             <div class="story__step__content">
                                 <h3 class="h3 story__title">Ensemble, vers de nouveaux horizons</h3>
                                 <div class="story__description">
@@ -136,43 +136,32 @@
             <div class="container">
                 <h2 class="h2">Nos produits</h2>
                 <div class="products__content">
-                    <img src="assets/img/products/les_bougies.webp" alt="" class="products__picture" width="272" height="220">
+                    <div class="products__picture">
+                        <img src="assets/img/products/les_bougies.webp" alt="Les bougies" class="active" width="272" height="220" loading="lazy">
+                        <img src="assets/img/products/les_fondants.webp" alt="Les fondants" width="272" height="220" loading="lazy">
+                        <img src="assets/img/products/les_brule-parfums.webp" alt="Les brûle-parfums"width="272" height="220" loading="lazy">
+                    </div>
                     <div class="products__items">
-                        <article class="products__item" data-img="assets/img/products/les_bougies.webp">
+                        <article class="products__item active">
                             <h2 class="h3">Les bougies</h2>
                             <div class="products__description">
                                 <p>Découvrez nos bougies parfumées, créées pour enchanter votre maison. Chaque bougie offre une expérience sensorielle unique, éveillant les sens et créant une ambiance envoûtante pour des moments de détente et d'évasion inoubliables.</p>
-                                <button class="btn icon transparent progression__toggle" aria-label="Pause">
-                                    <span class="icon-pause"></span>
-                                </button>
-                                <div class="progressbar">
-                                    <div class="progressbar__progression"></div>
-                                </div>
                             </div>
+                            <span class="icon-chevron-down"></span>
                         </article>
-                        <article class="products__item" data-img="assets/img/products/les_fondants.webp">
+                        <article class="products__item">
                             <h2 class="h3">Les fondants</h2>
                             <div class="products__description">
                                 <p>Plongez dans un océan de parfums exquis avec nos fondants de cire, conçus pour embaumer votre espace de manière discrète et naturelle. Chaque fondant libère lentement ses arômes envoûtants, créant une atmosphère captivante et relaxante, pour une expérience sensorielle inégalée.</p>
-                                <button class="btn icon transparent progression__toggle" aria-label="Pause">
-                                    <span class="icon-pause"></span>
-                                </button>
-                                <div class="progressbar">
-                                    <div class="progressbar__progression"></div>
-                                </div>
                             </div>
+                            <span class="icon-chevron-down"></span>
                         </article>
-                        <article class="products__item" data-img="assets/img/products/les_brule-parfums.webp">
+                        <article class="products__item">
                             <h2 class="h3">Les brûle-parfums</h2>
                             <div class="products__description">
                                 <p>Explorez un univers de senteurs raffinées avec nos brûle-parfums, méticuleusement conçus pour embaumer délicatement votre espace. Chaque brûle-parfum diffuse progressivement ses arômes envoûtants, instaurant une ambiance captivante et apaisante, offrant ainsi une expérience sensorielle incomparable.</p>
-                                <button class="btn icon transparent progression__toggle" aria-label="Pause">
-                                    <span class="icon-pause"></span>
-                                </button>
-                                <div class="progressbar">
-                                    <div class="progressbar__progression"></div>
-                                </div>
                             </div>
+                            <span class="icon-chevron-down"></span>
                         </article>
                     </div>
                 </div>
@@ -243,7 +232,7 @@
         <section class="contact" id="contact">
             <div class="container">
                 <h2 class="h2">Contact</h2>
-                <form action="" method="post" class="contact__form">
+                <form action="#" method="post" class="contact__form">
                     <div class="textfield">
                         <label for="name">Nom<span class="required">*</span></label>
                         <input type="text" id="name" name="name" required>
