@@ -159,8 +159,8 @@ function detectScrollPosition() {
     }
 
     // Change size's candle during scrolling
-    const candleBody = document.querySelector('.candle-body');
-    const candleTop = document.querySelector('.candle-top');
+    const candleBody = document.querySelector(".candle-body");
+    const candleTop = document.querySelector(".candle-top");
 
     const scrollPercentage = Math.min(1, Math.max(0, -storyTop / 3200));
 
@@ -175,3 +175,10 @@ function detectScrollPosition() {
 window.addEventListener("scroll", detectScrollPosition);
 
 detectScrollPosition();
+
+// CONTACT FORM
+const contactForm = document.querySelector(".contact__form");
+
+contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();    
+});
