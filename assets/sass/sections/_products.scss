@@ -142,7 +142,7 @@
             transform: rotate(-3deg) translateX(-20px);
             display: flex;
             gap: $spacing-s;
-            transition: transform 0.15s ease;
+            transition: transform 0.3s ease-out;
         }
     }
 }

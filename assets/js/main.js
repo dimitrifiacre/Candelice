@@ -13,7 +13,9 @@ function onScroll() {
     // Slide scroll animation
     const productsSlides = document.querySelector(".products__slides");
     const translateValue = scrollPosition * 0.1;
-    productsSlides.style.transform = `rotate(-3deg) translateX(${-translateValue}px)`;
+    const slideTop = document.querySelector(".products__slide").getBoundingClientRect().top;
+
+    if (slideTop < 1500 && slideTop > -700) productsSlides.style.transform = `rotate(-3deg) translateX(${-translateValue}px)`;
 }
 
 window.addEventListener("scroll", () => requestAnimationFrame(onScroll));
