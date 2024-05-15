@@ -136,6 +136,11 @@
                 width: auto;
                 }
             }
+
+            @include breakpoint-xl {
+                height: 500px;
+            }
+
         }
 
         &__slides {
