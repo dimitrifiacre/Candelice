@@ -82,6 +82,7 @@ headerNavigation.addEventListener("click", (e) => {
 // Toggle theme
 themeToggle.forEach(toggle => {
     toggle.addEventListener("click", () => {
+        document.documentElement.classList.add("no-transition");
         document.documentElement.classList.toggle("dark-theme");
         document.documentElement.classList.toggle("light-theme");
 
@@ -99,6 +100,8 @@ themeToggle.forEach(toggle => {
                 icon.classList.add("icon-moon");
             }
         });
+
+        requestAnimationFrame(() => document.documentElement.classList.remove("no-transition"));
     });
 });
 
