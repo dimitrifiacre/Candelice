@@ -101,6 +101,10 @@ themeToggle.forEach(toggle => {
             }
         });
 
+        // Change meta theme color
+        const metaTag = document.querySelector("meta[name='theme-color']");
+        document.documentElement.classList.contains("light-theme") ? metaTag.setAttribute("content", "#FCFCFC") : metaTag.setAttribute("content", "#151515");
+
         requestAnimationFrame(() => document.documentElement.classList.remove("no-transition"));
     });
 });
@@ -124,7 +128,7 @@ productsItems.forEach((item, i) => {
             productImages.forEach(image => {
                 image.classList.remove("active");
             });
-    
+
             item.classList.add("active");
             productImages[i].classList.add("active");
 
@@ -183,5 +187,5 @@ detectScrollPosition();
 const contactForm = document.querySelector(".contact__form");
 
 contactForm.addEventListener("submit", (e) => {
-    e.preventDefault();    
+    e.preventDefault();
 });
