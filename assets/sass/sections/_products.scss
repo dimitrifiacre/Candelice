@@ -84,7 +84,7 @@
 
             @include breakpoint-l {
                 max-width: 480px;
-                height: 449px;
+                height: auto;
             }
 
             img {

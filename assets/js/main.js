@@ -103,10 +103,15 @@ themeToggle.forEach(toggle => {
 // PRODUCTS SECTION
 const productsItems = document.querySelectorAll(".products__item");
 const productImages = document.querySelectorAll(".products__picture img");
+let clickAuthorized = true;
 
 productsItems.forEach((item, i) => {
     item.addEventListener("click", () => {
+        if (!clickAuthorized) return;
+
         if (!item.classList.contains("active")) {
+            clickAuthorized = false;
+
             productsItems.forEach(item => {
                 item.classList.remove("active");
             });
@@ -117,6 +122,10 @@ productsItems.forEach((item, i) => {
     
             item.classList.add("active");
             productImages[i].classList.add("active");
+
+            setTimeout(() => {
+                clickAuthorized = true;
+            }, 500);
         }
     });
 });
