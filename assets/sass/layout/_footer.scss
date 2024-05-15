@@ -67,47 +67,58 @@
     .copyright {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         background-color: $primary-500;
         position: relative;
         padding: 0 $spacing-l;
 
+        @include breakpoint-l {
+            align-items: center;
+        }
+
         .container {
-            gap: $spacing-xl;
+            gap: $spacing-l;
+            padding-bottom: $spacing-l;
+            align-items: flex-start;
+
+            @include breakpoint-l {
+                padding-bottom: $spacing-xl;
+            }
+        }
+
+        &__top {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-m;
+            width: 100%;
 
             @include breakpoint-l {
                 flex-direction: row;
                 justify-content: space-between;
+                align-items: center;
             }
         }
 
         &__logo {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: $spacing-s;
+            align-items: flex-start;
+            gap: $spacing-xs;
             color: $primary-800;
-
-            @include breakpoint-l {
-                align-items: flex-start;
-            }
 
             svg path {
                 fill: $primary-800;
-            }
-
-            p {
-                text-align: center;
-
-                @include breakpoint-l {
-                    text-align: left;
-                }
             }
         }
 
         &__socialmedia {
             display: flex;
             gap: $spacing-s;
+            margin-left: -8px;
+
+            @include breakpoint-l {
+                margin: 0;
+            }
 
             a {
                 color: $primary-800;
@@ -122,6 +133,40 @@
                     font-size: 2rem;
                 }
             
+            }
+        }
+
+        &__bottom {
+            color: $primary-800;
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-l;
+            width: 100%;
+
+            @include breakpoint-l {
+                flex-direction: row-reverse;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            & ul {
+                display: flex;
+                flex-direction: column;
+                gap: $spacing-s;
+
+                @include breakpoint-l {
+                    flex-direction: row;
+                    gap: $spacing-l;
+                }
+            }
+
+            & ul li a {
+                color: inherit;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
     }
