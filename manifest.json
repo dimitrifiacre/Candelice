@@ -3,22 +3,21 @@
     "name": "Candelice",
     "icons": [
         {
-            "src": "/assets/img/favicon.png",
+            "src": "./assets/img/favicon.png",
             "sizes": "64x64 32x32 24x24 16x16",
             "type": "image/x-icon"
         },
         {
-            "src": "/assets/img/favicon192.png",
+            "src": "./assets/img/favicon192.png",
             "type": "image/png",
             "sizes": "192x192"
         },
         {
-            "src": "/assets/img/favicon512.png",
+            "src": "./assets/img/favicon512.png",
             "type": "image/png",
             "sizes": "512x512"
         }
     ],
     "display": "standalone",
-    "theme_color": "#F0725C",
-    "background_color": "#FCFCFC"
+    "theme_color": "#F0725C"
 }
