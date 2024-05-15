@@ -23,6 +23,25 @@
         .container {
             gap: $spacing-s;
 
+            > .btn {
+                padding-right: 48px;
+                position: relative;
+
+                > span {
+                    position: absolute;
+                    right: 0;
+                    top: 11px;
+                    margin-right: 18px;
+                    transition: .3s ease-out;
+                }
+
+                &:hover {
+                    > span {
+                        margin-right: 12px;
+                    }
+                }
+            }
+
             @include breakpoint-l {
                 align-items: start;
                 gap: $spacing-l;
