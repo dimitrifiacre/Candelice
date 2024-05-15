@@ -112,7 +112,7 @@
             position: absolute;
             bottom: -120px;
             left: 0;
-            height: 280px;
+            height: 286px;
             width: 100%;
             overflow: hidden;
             display: flex;
@@ -124,7 +124,7 @@
 
             @include breakpoint-m {
                 height: 320px;
-                align-items: center;
+                align-items: flex-start;
             }
 
             @include breakpoint-l {
@@ -139,6 +139,7 @@
 
             @include breakpoint-xl {
                 height: 500px;
+                align-items: center;
             }
 
         }
