@@ -3,11 +3,17 @@
         display: flex;
         flex-direction: column;
         position: relative;
-        background-color: theme("primary-100");
+        background-color: theme("background-violet");
         padding-bottom: $spacing-4xl;
 
         @include breakpoint-l {
             padding-bottom: 14rem;
+        }
+
+        & .h2 {
+            &:after {
+                background: url("../img/underline_heading_violet.svg") no-repeat center / cover;
+            }
         }
 
         &__content {

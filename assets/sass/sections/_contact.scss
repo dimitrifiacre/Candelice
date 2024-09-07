@@ -25,6 +25,12 @@
             }
         }
 
+        & .h2 {
+            &:after {
+                background: url("../img/underline_heading_yellow.svg") no-repeat center / cover;
+            }
+        }
+
         &__form {
             display: flex;
             flex-direction: column;

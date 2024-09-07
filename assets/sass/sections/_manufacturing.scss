@@ -6,6 +6,12 @@
             margin-top: 14rem;
         }
 
+        & .h2 {
+            &:after {
+                background: url("../img/underline_heading_green.svg") no-repeat center / cover;
+            }
+        }
+
         &__content {
             display: flex;
             flex-direction: column;
